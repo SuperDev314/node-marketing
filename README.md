@@ -1,8 +1,8 @@
-# Create a marketing website using contentstack-express framework
+# Create a marketing website using ExpressJS framework
 
 About Built.io Contentstack: Built.io Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-About this project: Create professional marketing-themed website using contentstack-express framework of Built.io Contentstack.
+About this project: Create professional marketing-themed website using ExpressJS framework.
 
 
 ![banner](https://images.contentstack.io/v3/assets/blt2f8208e2d15beeb0/bltcff0c33efe5bc1aa/592823b1237795ad38c68dd5/download "banner.png")
