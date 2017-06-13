@@ -1,0 +1,15 @@
+.idea/*
+_logs/
+node_modules/
+.idea/
+*.idea
+**/.idea/workspace.xml
+.idea/workspace.xml
+.idea/workspace.xml.old
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+_logs/*
+_content/
+*.directory

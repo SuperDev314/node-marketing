@@ -1,0 +1,63 @@
+{# If you have a "Content Type" for footer in Built.io Contentstack then use get() view helper to retrieve footer entry. #}
+{# e.g. set footer = get("footer_content_type_id") #}
+{# And then render footer values using the {{footer.field_name}} #}
+
+{% set footer = get("footer") %}
+
+<!-- /footer-columns-region start-->
+<div id="footer-columns-region" class="footer-columns region-30 block-30 bg-color-grayDark2 text-color-light">
+    <div class="container">
+        <div class="row">
+            {% for _entry in footer.address_block %}
+            <!-- /footer-first-column-region start-->
+                <div id="footer-first-column-region" class="footer-first-column col-xs-12 col-md-4 text-center">
+                    <!-- /region start -->
+                    <div class="region">
+                        <!-- /footer-address-block start-->
+                        <div id="footer-address-block" class="footer-address block">
+                            <i class="fa {{_entry.font_awesome_class}} size-32 margin-bottom-20" aria-hidden="true"></i>
+                            <p>{{_entry.address}}</p>
+                        </div>
+                        <!-- /footer-address-block end-->
+                    </div>
+                    <!-- /region end-->
+                </div>
+            <!-- /footer-first-column-region end-->
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- /footer-columns-region end-->
+
+<footer class="region-10 block-10 bg-color-grayDark1 text-color-light">
+    <div class="container">
+        <div class="row">
+            <!-- /footer-left-region start -->
+            <div id="footer-left-region" class="footer-left region-bottom-sm-0 col-xs-12 col-md-6 text-center-sm">
+                <div class="region">
+                    <!-- /copyright-block start-->
+                    <div id="copyright-block" class="block">
+                        <p>{{footer.copyright}}</p>
+                    </div>
+                    <!-- /copyright-block end-->
+                </div>
+            </div>
+            <!-- /footer-left-region end-->
+
+            <!-- /footer-right-region start-->
+            <div id="footer-right-region" class="footer-right region-top-sm-0 col-xs-12 col-md-6 text-right text-center-sm">
+                <div class="region">
+                    <!-- /social-networks-footer start-->
+                    <div id="social-networks-footer-block" class="social-networks-footer block">
+                    {% for icon in footer.social_icon %}
+                        <a href="{{icon.url}}"><i class="fa {{icon.font_awesome_class}}" aria-hidden="true"></i></a>
+                    {% endfor %}
+                    </div>
+                    <!-- /social-networks-footer end-->
+                </div>
+            </div>
+            <!-- /footer-right-region end-->
+
+        </div>
+    </div>
+</footer>

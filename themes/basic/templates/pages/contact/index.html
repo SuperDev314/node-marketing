@@ -1,0 +1,118 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<section>
+    <!-- /top-content-region start-->
+    <div id="top-content-region"
+         class="top-content region-0 padding-top-15 padding-bottom-15 block-15 bg-color-grayLight1">
+        <div class="container">
+            <div class="row">
+                <!-- /top-content-left-region start-->
+                <div id="top-content-left-region" class="top-content-left col-xs-12 col-md-6 text-center-sm">
+                    <div class="region">
+                        <!-- /page-title-block start-->
+                        <div id="page-title-block" class="page-title block">
+                            <h1>{{entry.title}}</h1>
+                        </div>
+                        <!-- /page-title-block end-->
+
+                    </div>
+                </div>
+                <!-- /top-content-left-region end-->
+            </div>
+        </div>
+    </div>
+    <!-- /top-content-region end-->
+
+    <!-- /content-region start-->
+    <div id="content-region" class="content region">
+        <!-- /contacts-block start-->
+        <div id="contacts-block" class="contacts block">
+            <div class="container">
+                <div class="row">
+                    {% for contact in entry.contact_details %}
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2">
+                        <h5>{{contact.title}}</h5>
+                        <p>{{contact.details}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- /contacts-block end-->
+        <!-- /contact-content-block start-->
+        <div id="contact-content-block" class="contact-content block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+                        <div class="" id="demo"></div>
+
+                        <!-- /Form  start-->
+                            <form name="form" class="form-horizontal" role="form">
+                                <div id="errorBox"></div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-6 margin-bottom-sm-20">
+                                        <input type="text" value="" class="form-control" id="contact-fname" name="Name" placeholder="First Name">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="contact-lname" value="" name="LastName" placeholder="Last Name">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-6 margin-bottom-sm-20">
+                                        <input type="text" class="form-control" id="contact-email" value="" name="Email" placeholder="Email">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <input type="text" value="" class="form-control" id="contact-phone" name="phone" placeholder="Phone">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input type="text" class="form-control" id="contact-subject" name="subject" placeholder="Subject">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <textarea class="form-control" rows="8" id="contact-message" name="message" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input type="submit" class="btn btn-primary btn-sm" id="submit" name="submit" value="Send">
+                                    </div>
+                                </div>
+
+                            </form>
+                        <!--form ends-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /contact-content-block end-->
+    </div>
+    <!-- /content-region -->
+
+    <!-- /map-region start-->
+    <div id="map-region">
+        <div id="map_canvas" class="google-map">
+            {{entry.map}}
+        </div>
+    </div>
+    <!-- /map-region end-->
+
+</section>
+
+{% endblock %}

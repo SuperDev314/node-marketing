@@ -1,0 +1,149 @@
+/*********************** General Styles **********************/
+
+a {
+  color: #e74c3c;
+}
+
+/*********************** Generic Styles **********************/
+
+.overlay-color-theme {
+  background: rgba(231,76,60,.8);
+}
+
+
+/*************************** Menus ***************************/
+
+/** Main Menu **/
+.main-menu .active > a,
+.main-menu .nav .open > a,
+.main-menu .nav .open > a:hover,
+.main-menu .nav .open > a:focus,
+.main-menu .nav > li > a:hover,
+.main-menu .nav > li > a:focus,
+.main-menu .nav > li:hover > a,
+.main-menu .nav > li:focus > a {
+  color: #e74c3c;
+}
+
+.main-menu .dropdown-menu > .active > a,
+.main-menu .dropdown-menu > li > a:hover,
+.main-menu .dropdown-menu > li > a:focus {
+  color: #e74c3c;
+}
+
+@media (max-width: 767px) {
+  .main-menu .navbar-toggle {
+    border: 1px solid #e74c3c;
+    background: #e74c3c;
+  }
+}
+
+/************************* Portfolio *************************/
+.portfolio-overlay {
+  background: rgba(231,76,60,.8);
+}
+
+.our-work-1-overlay {
+  background: rgba(231,76,60,.8);
+}
+
+/**************************** Team ***************************/
+
+.team-item-overlay {
+  background: rgba(231,76,60,.8);
+}
+
+/************************* Pagination ************************/
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #e74c3c;
+}
+
+/**************************** Tabs ***************************/
+
+.nav-tabs > li > a:hover {
+  color: #e74c3c;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.nav-tabs.nav-justified > li > a:hover {
+  color: #e74c3c;
+}
+
+.nav-tabs.nav-justified > .active >a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+/************************* Accordions ************************/
+
+.panel-primary > .panel-heading {
+  border: 1px solid #e74c3c;
+}
+
+/************************** Buttons **************************/
+
+.btn-primary {
+  border-color: #e74c3c !important;
+  color: #e74c3c;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  border-color: #e74c3c;
+  background-color: #e74c3c;
+}
+
+.btn-link {
+  color: #e74c3c;
+}
+
+/*************************** Labels **************************/
+
+.label-primary {
+  background-color: #e74c3c;
+}
+
+/*********************** Progress Bars ***********************/
+
+.progress-bar-primary {
+  background-color: #e74c3c;
+}
+
+/*************************** Forms ***************************/
+
+.form-control:focus {
+  border-color: #e74c3c;
+}
+
+/******************** Colors & Backgrounds *******************/
+
+.text-color-light .social-networks-footer a:hover,
+.text-color-light .social-networks-footer a:focus,
+.text-color-light .social-networks-footer a:active {
+  color: #e74c3c;
+}
+
+.text-color-theme      { color: #e74c3c; }
+
+.bg-color-theme        { background-color: #e74c3c; }
