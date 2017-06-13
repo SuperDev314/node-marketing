@@ -1,0 +1,12 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+	<section class="main-content">
+		<div>
+			{{ error.message }}
+			{% if error.err %}
+				{{ error.err }}
+			{% endif %}
+		</div>
+	</section>
+{% endblock %}

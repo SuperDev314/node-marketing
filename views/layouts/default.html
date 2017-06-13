@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{entry.title}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contentstack</title>
+    <style>
+        /*html { background-color: black; }*/
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico?v=3.0.1-2" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.ico?v=3.0.1-2" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Font awsome -->
+    <link type="text/css" href="/css/font-awesome.css" rel="stylesheet">
+    <!-- Icon fonts -->
+    <link type="text/css" href="/css/icon-fonts.css" rel="stylesheet">
+    <!-- Normalize -->
+    <link type="text/css" href="/css/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link type="text/css" href="/css/style.css" rel="stylesheet">
+    <!-- Fonts -->
+    <!-- Open Sans for body font -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" rel="stylesheet" type="text/css">
+
+    <!-- <link type="text/css" rel="stylesheet" href="/css/style.css"> -->
+    <!-- <script type="text/javascript" src="/js/script.js"></script> -->
+</head>
+<body>
+    {% include "partials/header.html" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "partials/footer.html" %}
+    <!-- Script files-->
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/typed.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+<section>
+    <div class="wrapper">
+        <div class="main-container">
+            <section class="team-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 margin-top-50 margin-bottom">
+                            {{entry.team_section.content}}
+                            <a href="#" class="btn btn-primary mrl">{{entry.team_section.cta[1].title}}</a>
+                            <a href="#" class="btn btn-secondary">{{entry.team_section.cta[1].title}}</a>
+                        </div>
+                        <div class="col-md-8">
+                            <img class="img-responsive" src="{{getAssetUrl(entry.team_section.image.url)}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="promotion-wrap margin-top-max margin-bottom-max">
+                <div class="container">
+                    <div class="text-center">
+                        {{entry.promote.description}}
+                    </div>
+                    <div class="img-wrap">
+                        <img class="img-responsive" src="{{getAssetUrl(entry.promote.image.url)}}" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-justify">
+                            <p>{{entry.promote.sub_content}}</p>
+                            <div class="row">
+                                <div class="col-sm-4 ">
+                                    <a href="#" class="icons-links">
+                                        <div class="icons-img-cont">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[0].color_image.url)}}" alt="">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[0].image.url)}}" alt="">
+                                        </div>
+                                        <h4>{{entry.promote.store_section[0].title}}</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="#" class="icons-links">
+                                        <div class="icons-img-cont">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[1].color_image.url)}}" alt="">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[1].image.url)}}" alt="">
+                                        </div>
+                                        <h4>{{entry.promote.store_section[1].title}}</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <a href="#" class="icons-links">
+                                        <div class="icons-img-cont">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[2].color_image.url)}}" alt="">
+                                            <img class="img-responsive" src="{{getAssetUrl(entry.promote.store_section[2].image.url)}}" alt="">
+                                        </div>
+                                        <h4>{{entry.promote.store_section[2].title}}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="blockquote-wrap" style="background-image: url({{getAssetUrl(entry.testimonials[0].background_image.url)}});">
+                <div class="background-overlay"></div>
+                <div class="container">
+                    <blockquote>
+                        <p>{{entry.testimonials[0].description}}</p>
+                        <p class="speaker">{{entry.testimonials[0].name}}</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
