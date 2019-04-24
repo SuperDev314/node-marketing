@@ -52,9 +52,11 @@ try {
   require('./routes')(app);
 
   app.locals.getAssetUrl = function(asset) {
+    if(asset){
     asset = asset.split("?");
     asset = asset[0];
     return (asset) ? asset : "";
+    }
   };
 
   app.listen(PORT, function() {
