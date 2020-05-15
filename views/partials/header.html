@@ -1,0 +1,101 @@
+{# If you have a "Content Type" for header in Built.io Contentstack then use get() view helper to retrieve header entry. #} {# e.g. set header = get("header_content_type_id") #} {# And then render header values using the {{header.field_name}} #}
+<header class="header header-animated">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="logo" href="/">
+                    <img class="img-responsive logo" src="{{getAssetUrl(header.logo.image.url)}}" alt="" data-logo-alt="{{getAssetUrl(header.logo.image.url)}}" data-logo-default="{{getAssetUrl(header.logo.color_image.url)}}">
+                </a>
+            </div>
+            <div class="nav-toggle collapsed" data-toggle="collapse" data-target="#navbarMain" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="" class="btn btn-primary-outline" data-toggle="modal" data-target="#signUp">{{header.cta[0].title}}</a>
+                    </li>
+                    <li>
+                        <a href="" data-toggle="modal" data-target="#login">{{header.cta[1].title}}</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav collapsed-color">
+                    {%for menu in header.navigation_section.navigation_bar %} {%if menu.sub_navigation.length > 0%}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="{{menu.link}}">{{menu.title}}<i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu animated fadeInUp" role="menu">
+                            {% for sub in menu.sub_navigation %}
+                            <li>
+                                <a href="{{sub.link}}">{{sub.title}}</i></a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{{menu.link}}" class="scroll">{{menu.title}}</a>
+                    </li>
+                    {% endif %} {% endfor %}
+                </ul>
+            </div>
+            <!-- .navbar-collapse -->
+        </nav>
+    </div>
+</header>
+<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-center form-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header" data-switcher="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <h2>Get Started Absolutely<span> Free!</span></h2>
+                <span class="subtitle">No credit card needed</span>
+                <form class="contact-form form-validate3" novalidate="novalidate">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="name" id="name" placeholder="First Name" required="" autocomplete="off" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="pass" class="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true">
+                    </div>
+                    <input class="btn btn-md btn-primary btn-center" id="sign_up" type="button" value="Sign Up">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- signUp End -->
+<!-- login -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-center form-dialog">
+        <div class="modal-content text-center">
+            <div class="modal-header" data-switcher="">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <h2>Login and Get <span>Started</span></h2>
+                <span class="subtitle">Just fill in the form below</span>
+                <form class="contact-form form-validate4" novalidate="novalidate">
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="pass" class="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true">
+                    </div>
+                    <input class="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- login up -->
+

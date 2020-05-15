@@ -1,0 +1,15 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+.idea/workspace.xml
+.idea/
+./idea/*
+data/*
+module/*
+Query/*
+query/*
+data - Copy/
+data - Copy/*
+node_modules/
+node_modules/*
+libs/utils/logs/
+libs/utils/logs/*
+*.log

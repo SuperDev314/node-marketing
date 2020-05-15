@@ -1,0 +1,23 @@
+{% extends "layouts/default.html" %} {% block content %}
+<section>
+    <div class="wrap">
+        <div class="main-container">
+            <div class="blog-post">
+                <h2 style="margin-left: 10%;">BLOG POSTS:-</h2>
+                <div class="container">
+                    {%for blog in entry.display_blogs %}
+                    <div class="row main-blog-div">
+                        <img class="card-img-top" src="{{blog.blogs.blog_image[0].url}}"
+                            alt="{{blog.blogs.blog_image[0].filename}}" height="150px" width="150px"
+                            style="border-radius: 50%;display: inline-block; ">
+                        <h4 class="blog-title">{{blog.blogs.title}}</h4>
+                        <p class="blog-summary">{{blog.blogs.summary}}</p>
+                        <a href="/blogs{{blog.blogs.readmore.href}}" class="blog-directive">read more...</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

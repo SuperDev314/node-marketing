@@ -1,0 +1,116 @@
+{% extends "layouts/default.html" %} {% block content %}
+<section>
+    <div class="wrapper">
+        <div class="main-container">
+            <section class="advantages-wrap margin-top-max">
+                <div class="container">
+                    <div class="text-center">
+                        {{entry.advantages.content}}
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-3 col-xs-6 icon-wrap">
+                            <i class="icon-responsive fa-4x"></i>
+                            <h4>
+                  <strong>{{entry.advantages.advantages[0].title}}</strong>
+                </h4>
+                            <p class="text-center">{{entry.advantages.advantages[0].description}}</p>
+                        </div>
+                        <div class="col-md-3 col-xs-6 icon-wrap">
+                            <i class="icon-clean-code fa-4x"></i>
+                            <h4>
+                  <strong>{{entry.advantages.advantages[1].title}}</strong>
+                </h4>
+                            <p class="text-center">{{entry.advantages.advantages[1].description}}</p>
+                        </div>
+                        <div class="col-md-3 col-xs-6 icon-wrap">
+                            <i class="icon-ui-design fa-4x"></i>
+                            <h4>
+                  <strong>{{entry.advantages.advantages[2].title}}</strong>
+                </h4>
+                            <p class="text-center">{{entry.advantages.advantages[2].description}}</p>
+                        </div>
+                        <div class="col-md-3 col-xs-6 icon-wrap">
+                            <i class="icon-for-business fa-4x"></i>
+                            <h4>
+                  <strong>{{entry.advantages.advantages[3].title}}</strong>
+                </h4>
+                            <p class="text-center">{{entry.advantages.advantages[3].description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tab-container margin-top-max margin-bottom-max" id="tabs">
+                <div class="container text-center">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#tab1" data-toggle="tab" aria-expanded="true">{{entry.advantages.tab_section[0].title}}</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab2" data-toggle="tab" aria-expanded="false">{{entry.advantages.tab_section[1].title}}</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab3" data-toggle="tab" aria-expanded="false">{{entry.advantages.tab_section[2].title}}</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="tab1">
+                                <div class="col-md-6 col-sm-6 col-sm-push-6 text-left animated fadeInRight">
+                                    <img class="img-responsive" src="{{getAssetUrl(entry.advantages.tab_section[0].image.url)}}" alt="">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-sm-pull-6 text-left animated fadeInLeft">
+                                    {{entry.advantages.tab_section[0].description}}
+                                    <a href="#" class="btn btn-primary mrl">{{entry.advantages.tab_section[0].cta[0].title}}</a>
+                                    <a href="#" class="btn btn-secondary">{{entry.advantages.tab_section[0].cta[1].title}}</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2">
+                                <div class="col-md-6 col-sm-6 col-sm-push-6 text-left animated fadeInRight">
+                                    <img class="img-responsive" src="{{getAssetUrl(entry.advantages.tab_section[1].image.url)}}" alt="" />
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-sm-pull-6 text-left animated fadeInLeft">
+                                    {{entry.advantages.tab_section[1].description}}
+                                    <a href="#" class="btn btn-primary mrl">{{entry.advantages.tab_section[1].cta[0].title}}</a>
+                                    <a href="#" class="btn btn-secondary">{{entry.advantages.tab_section[1].cta[1].title}}</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab3">
+                                <div class="col-md-6 col-sm-6 col-sm-push-6 text-left animated fadeInRight">
+                                    <img class="img-responsive" src="{{getAssetUrl(entry.advantages.tab_section[2].image.url)}}" alt="">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-sm-pull-6 text-left animated fadeInLeft">
+                                    {{entry.advantages.tab_section[0].description}}
+                                    <a href="#" class="btn btn-primary mrl">{{entry.advantages.tab_section[2].cta[0].title}}</a>
+                                    <a href="#" class="btn btn-secondary">{{entry.advantages.tab_section[2].cta[1].title}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="video-wrap" style="background-image: url({{getAssetUrl(entry.video_section.image.url)}});">
+                <div class="background-overlay"></div>
+                <span class="fa fa-play" data-toggle="modal" data-target="#videoModal"></span>
+            </div>
+        </div>
+    </div>
+    <!-- Video -->
+    <div class="modal videoModal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9" id="yt-player">
+                        {{entry.video_section.video}}
+                        <!-- <img class="img-responsive" src="img/hero-bg.jpg"> -->
+                        <!-- <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/27408483?title=0&byline=0&portrait=0&color=ffffff"></iframe> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

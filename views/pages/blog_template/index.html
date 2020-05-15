@@ -1,0 +1,38 @@
+{% extends "layouts/default.html" %} {% block content %}
+<section>
+    <div class="single-blog-post">
+        <div class="container">
+            <div class="blog-heading">
+                <h2>{{entry.blogs.title}}</h2>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-8 blog-biref-description">
+                    {{entry.blogs.brief_description}}
+                </div>
+                <div class="col col-lg-2 blog-images-display">
+                    {%for images in entry.blogs.blog_image %}
+                    <img src="{{images.url}} " alt="{{images.filename}}" width="300px" height="300px"
+                        style="border-radius: 12%;" />
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row author-section">
+                <h3>About Author</h3>
+                {%for author in entry.blogs.about_authors %}
+                <div class="col-5 author-details">
+                    <div class="display-author-details">
+                        <img src="{{author.authors.author_image.url}}" alt="{{author.authors.author_image.filename}}"
+                            style="width:100px">
+                        <p class="about-author">{{author.authors.author_s_details}}</p>
+                        <div style="margin: 24px 0;">
+                            {{author.authors.support_your_blogger[0].support.links_to_social}}
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
