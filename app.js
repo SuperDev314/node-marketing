@@ -19,8 +19,8 @@ try {
   if(env === 'development')
     _env = require(path.join(_path, 'default'));
   else
-    _env = require(path.join(_path, env));
-
+    // _env = require(path.join(_path, env));
+    _env = require(path.join(_path, 'default'));
   // load globals
   global['config'] = _env;
   global['Stack'] = Contentstack.Stack({
