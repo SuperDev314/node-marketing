@@ -1,5 +1,13 @@
 {% extends "layouts/default.html" %}
 {% block content %}
+<script type="text/javascript">
+    window.entry = {{entry | dump}};
+
+   document.body.setAttribute("data-pageref",entry.uid);
+   document.body.setAttribute("data-contenttype","sdkE_about_page");
+   document.body.setAttribute("data-local","en-us");
+    
+</script>
 <section>
     <div class="wrapper">
         <div class="main-container">

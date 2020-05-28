@@ -1,6 +1,14 @@
 {% extends "layouts/default.html" %}
 {% include "partials/header.html" %}
 {% block content %}
+<script type="text/javascript">
+    window.entry = {{ entry | dump }};
+
+    document.body.setAttribute("data-pageref", entry.uid);
+    document.body.setAttribute("data-contenttype", "sdkE_product");
+    document.body.setAttribute("data-local", "en-us");
+
+</script>
 <section>
     <div class="product-hero-bg hero-bg" style="background-image: url({{getAssetUrl(entry.banner[0].banner_img.url)}})">
         <div class="aligned-container typed-container text-center">
@@ -19,10 +27,10 @@
                 {{entry.right_sources.content}}
                 <div class="row">
                     {% for sources_content in entry.right_sources.right_sources_content %}
-                        <div class="col-md-4 col-xs-12 text-center icon-wrap">
-                            <h4><strong>{{sources_content.title}}</strong></h4>
-                            <p>{{sources_content.description}}</p>
-                        </div>
+                    <div class="col-md-4 col-xs-12 text-center icon-wrap">
+                        <h4><strong>{{sources_content.title}}</strong></h4>
+                        <p>{{sources_content.description}}</p>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
@@ -41,8 +49,8 @@
                 <div class="row">
                     <div class="col-md-6 text-left padding-right-max">
                         {% for real_data in entry.real_data.real_data_content %}
-                            <h4><strong>{{real_data.title}}</strong></h4>
-                            <p class="mbl">{{real_data.description}}</p>
+                        <h4><strong>{{real_data.title}}</strong></h4>
+                        <p class="mbl">{{real_data.description}}</p>
                         {% endfor %}
                     </div>
                     {{entry.real_data.description}}
@@ -71,8 +79,8 @@
                     </div>
                     <div class="col-md-6 text-left padding-left-max">
                         {% for process_communication in entry.process_communication.process_content %}
-                            <h4><strong>{{process_communication.title}}</strong></h4>
-                            <p class="mbl">{{process_communication.description}}</p>
+                        <h4><strong>{{process_communication.title}}</strong></h4>
+                        <p class="mbl">{{process_communication.description}}</p>
                         {% endfor %}
                     </div>
                     {{entry.process_communication.description}}
