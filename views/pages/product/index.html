@@ -1,14 +1,6 @@
 {% extends "layouts/default.html" %}
 {% include "partials/header.html" %}
 {% block content %}
-<script type="text/javascript">
-    window.entry = {{ entry | dump }};
-
-    document.body.setAttribute("data-pageref", entry.uid);
-    document.body.setAttribute("data-contenttype", "sdkE_product");
-    document.body.setAttribute("data-locale", "en-us");
-
-</script>
 <section>
     <div class="product-hero-bg hero-bg" style="background-image: url({{getAssetUrl(entry.banner[0].banner_img.url)}})">
         <div class="aligned-container typed-container text-center">
