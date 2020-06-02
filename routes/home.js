@@ -8,13 +8,13 @@ var router = express.Router();
 // .language(req.params.id)
     // console.log('ID:------------------------- ', req.params.id)
 router.get('/', function(req, res, next){
-    var Query = Stack.ContentType('sdkE_home').Query()
+    var Query = Stack.ContentType('home').Query()
         .toJSON()
         .find()
         .spread(function success(result) {
             res.render('pages/home/index.html', {
                 entry: result[0],
-                ct_uid: 'sdkE_home'
+                ct_uid: 'home'
             });
         }, function error(error) {
             next(error);

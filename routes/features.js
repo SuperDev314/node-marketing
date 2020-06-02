@@ -4,7 +4,7 @@
 var express = require('express');
 var router = express.Router();
 router.get('/', function(req, res, next){
-    var Query = Stack.ContentType('sdkE_feature_page').Query()
+    var Query = Stack.ContentType('feature_page').Query()
         .toJSON()
         .find()
         .spread(function success(result) {

@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 router.get('/', function(req, res, next){
-    var Query = Stack.ContentType('sdke_blog').Query()
+    var Query = Stack.ContentType('blog').Query()
     .toJSON()
     .find()
     .spread(function success(result) {
