@@ -25,8 +25,8 @@ try {
   global['config'] = _env;
   global['Stack'] = Contentstack.Stack({
     api_key: config.contentstack.api_key,
-    access_token: config.contentstack.access_token,
-    environment: 'development'
+    access_token: config.contentstack.delivery_token,
+    environment: config.contentstack.environment
   });
 
   // load port

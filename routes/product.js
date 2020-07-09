@@ -6,7 +6,6 @@ router.get('/', function(req, res, next){
         .toJSON()
         .find()
         .spread(function success(result) {
-            console.log(result);
             res.render('pages/product/index.html', {
                 entry: result[0],
             });

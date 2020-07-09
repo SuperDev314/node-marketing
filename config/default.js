@@ -2,7 +2,8 @@ module.exports = exports = {
     port: 3000,
     // Contentstack Config
     contentstack: {
-        api_key: 'YOUR API KEY',
-        access_token: 'YOUR ACCESS TOKEN'
+        api_key: 'Your ApiKey',
+        delivery_token: 'Your Delivery Token',
+        environment: 'Your Publishing Environment'
     }
 };

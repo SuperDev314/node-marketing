@@ -1,6 +1,8 @@
 {
-  "name": "express-marketing-theme",
-  "version": "0.0.0",
+  "name": "@contentstack/express-marketing-theme",
+  "description": "An example of marketing sample apps using nodejs",
+  "version": "1.0.0",
+  "author": "Contentstack",
   "private": true,
   "scripts": {
     "start": "node app.js"

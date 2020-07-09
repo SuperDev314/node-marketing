@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
 	async.parallel([
 		function (callback) {
 			// Get Header data
-			var Query = Stack.ContentType('sdkE_header').Query()
+			var Query = Stack.ContentType('header').Query()
 				.toJSON()
 				.find()
 				.spread(function success(result) {
@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
 		},
 		function (callback) {
 			// Get Footer data
-			var Query = Stack.ContentType('sdkE_footer').Query()
+			var Query = Stack.ContentType('footer').Query()
 				.toJSON()
 				.find()
 				.spread(function success(result) {
