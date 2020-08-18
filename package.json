@@ -1,5 +1,5 @@
 {
-  "name": "@contentstack/express-marketing-theme",
+  "name": "@contentstack/contentstack-express-marketing-theme",
   "description": "An example of marketing sample apps using nodejs",
   "version": "1.0.0",
   "author": "Contentstack",
