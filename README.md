@@ -1,3 +1,6 @@
+[![Contentstack](https://www.contentstack.com/assets/blt440aad5a09c89b2f/contentstack_icon.svg)](https://www.contentstack.com/)
+
+
 # Create a marketing website using ExpressJS framework
 
 About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
@@ -5,14 +8,12 @@ About Contentstack: Contentstack is a headless CMS with an API-first approach th
 About this project: Create professional marketing-themed website using ExpressJS framework.
 
 
-![banner](https://images.contentstack.io/v3/assets/blt2f8208e2d15beeb0/bltcff0c33efe5bc1aa/592823b1237795ad38c68dd5/download "banner.png")
-
-![feature](https://images.contentstack.io/v3/assets/blt2f8208e2d15beeb0/bltf278eb4e482ff9cf/592823ef3df60860431f2621/download "feature.png")
+![banner](https://images.contentstack.io/v3/assets/bltf0aeb46e292dbc44/bltcd34666cead018dc/5f47798fb008d84afeba7187/nodejs-express-marketing.png "banner.png")
 
 
 ## Live Demo
 
-You can check the [live demo](https://marketing-theme.herokuapp.com/) to get first-hand experience of the website.
+You can check the [live demo](https://contentstack-express-marketing.herokuapp.com/) to get first-hand experience of the website.
 
 
 ## Tutorial
