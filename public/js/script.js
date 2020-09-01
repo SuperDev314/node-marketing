@@ -5,7 +5,7 @@ $(document).ready(function() {
     var $logoDefault = $header.find('.logo > img').data('logo-default'); // black logo
     $(".header").css("display","block")       
 
-    if (window.location.pathname == "/features" || window.location.pathname == "/about") {
+    if (window.location.pathname == "/features" || window.location.pathname == "/about" || window.location.pathname == "/blogs" || window.location.pathname.includes("/blogs/")) {
        $(".header").addClass("opaque");
        $header.find('.logo > img').attr('src', $logoDefault);
     }
@@ -33,7 +33,7 @@ $(document).ready(function() {
     })
 
     // typing Effect 
-    var stringArray = window.entry ? window.entry.hero_banner.rolling_text : null
+    var stringArray = window.entry ? window.entry.hero_banner.rolling_text : null;
     
     $(".typed").typed({
         strings: stringArray,
@@ -45,7 +45,7 @@ $(document).ready(function() {
     });   
 
     $(window).on('scroll', function() {
-        if (window.location.pathname != "/features" && window.location.pathname != "/about") {
+        if (window.location.pathname != "/features" && window.location.pathname != "/about" && window.location.pathname != "/blogs" && !window.location.pathname.includes("/blogs/") ) {
             console.log('true');
             if ($(window).scrollTop() > 100) {
                 $header.fadeIn().addClass('opaque');

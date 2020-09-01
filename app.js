@@ -19,14 +19,14 @@ try {
   if(env === 'development')
     _env = require(path.join(_path, 'default'));
   else
-    _env = require(path.join(_path, env));
-
+    // _env = require(path.join(_path, env));
+    _env = require(path.join(_path, 'default'));
   // load globals
   global['config'] = _env;
   global['Stack'] = Contentstack.Stack({
     api_key: config.contentstack.api_key,
-    access_token: config.contentstack.access_token,
-    environment: env
+    access_token: config.contentstack.delivery_token,
+    environment: config.contentstack.environment
   });
 
   // load port

@@ -1,0 +1,67 @@
+{% extends "layouts/default.html" %} {% block content %}
+<section>
+    <div class="wrap">
+        <div className="blogPostContainer">
+            <div className="heroBanner">
+                <img className="bannerImage" src="{{entry.hero_banner[0].banner_title_only.image.url}}"
+                    alt="{{entry.hero_banner[0].banner_title_only.image.filename}}" width="100%" height="550px" />
+            </div>
+        </div>
+        <div class="blogContent">
+            <h2 className="blogTitle">{{entry.title}}</h2>
+            {%for blog in entry.modular_blocks[0].blog_post_page.blog_post %} {%if
+      blog.hasOwnProperty('blog_content') %}
+            <div class="row blogPostContent">
+                {{blog.blog_content.blog_post_content}}
+            </div>
+            {% elseif blog.hasOwnProperty('image_carousel') %}
+            <div class="glider-contain">
+                <h2>Slide Show</h2>
+                <div class="glider">
+                    {%for img in blog.image_carousel.image %}
+                    <div>
+                        <img src="{{img.url}}" alt="{{img.filename}}" width="100%" height="500px" />
+                    </div>
+                    {% endfor %}
+                </div>
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
+            </div>
+            {% elseif blog.hasOwnProperty('blog_quotes') %}
+            <div class="blogQuotes">
+                <h3>Quotes</h3>
+                <blockquote class="otroBlockquote">
+                    {{blog.blog_quotes.quote}}
+                </blockquote>
+            </div>
+
+            {% elseif blog.hasOwnProperty('social_network_embed') %}
+      <div className="embededCodes">
+        <h2>Social Networks</h2>
+        {% for ntw in blog.social_network_embed.embed_code %}
+        <div class="socialMediaContent">
+          {{ntw}}
+        </div>
+        {% endfor %}
+            </div>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script type="text/javascript">
+        window.entry = {{ entry | dump }};
+        new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,
+            dots: '#dots',
+            draggable: true,
+            rewind: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            }
+        });
+    </script>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %} {% block content %}
+<section>
+    <div class="wrap">
+        <div class="blogListcontainer">
+            <div class="blog-post">
+                <h2 style="margin-left: 10%;">BLOG LISTS:-</h2>
+                <div class="bloglistContainer">
+                    {%for list in entry[0].modular_blocks %}
+                    <div class="bloglist" style="margin-left: 30%;">
+                        <div class="leftSection">
+                          <div>
+                            <img
+                              class="listImages"
+                              src="{{list.blog_list.blog_image.url}}"
+                              alt="{{list.blog_list.blog_image.filename}}"
+                            />
+                          </div>
+                        </div>
+                        <div class="rightSection">
+                            {{list.blog_list.blog_details}}
+                            <a href="/blogs{{list.blog_list.cta.href}}" class="visitLink">{{list.blog_list.cta.title}}</a>
+                        </div>
+                      </div>
+                    {% endfor %}
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.entry = {{entry | dump}};
+    </script>
+</section>
+{% endblock %}

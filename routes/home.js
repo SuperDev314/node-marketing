@@ -14,6 +14,7 @@ router.get('/', function(req, res, next){
         .spread(function success(result) {
             res.render('pages/home/index.html', {
                 entry: result[0],
+                ct_uid: 'home'
             });
         }, function error(error) {
             next(error);
